@@ -1,5 +1,5 @@
 ﻿float n1 = 0, n2 = 0;
-int operacao = 0, aux = 0;
+int operacao = 0;
 
 Console.Write("Digite o primeiro numero:");
 n1 = float.Parse(Console.ReadLine());
@@ -14,17 +14,17 @@ do
     Console.WriteLine("2 - SUBTRAIR");
     Console.WriteLine("3 - MULTIPLICAR");
     Console.WriteLine("4 - DIVIDIR");
+    operacao = int.Parse(Console.ReadLine());
+    
+    Console.Clear();
 
-    if (aux > 0)
+    if (operacao < 1 || operacao > 4)
     {
         Console.WriteLine("!--------------------------------------------!");
         Console.WriteLine("ERRO: Operação inválida!");
         Console.WriteLine("!--------------------------------------------!");
     }
-
-    operacao = int.Parse(Console.ReadLine());
-    aux++;
-} while (operacao < 1 && operacao > 4);
+} while (operacao < 1 || operacao > 4);
 
 
 Console.WriteLine();
@@ -62,5 +62,5 @@ else
 
 Console.WriteLine();
 
-Console.WriteLine("Aperte qualquer tecla para terminar o programa.");
+Console.WriteLine("Pressione qualquer tecla para terminar o programa.");
 Console.ReadKey();
